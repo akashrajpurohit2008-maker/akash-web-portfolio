@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaipur Caterers – Multi-Cuisine Catering in Pune</title>
+  <meta name="description" content="Professional multi-cuisine catering in Pune for weddings, corporate events, birthdays, and more. Contact Jaipur Caterers for a free quote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --brand: #B85C2A;
+      --brand-dark: #9a4a21;
+      --brand-light: #FAF0EA;
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b6b6b;
+      --text-muted: #999;
+      --bg: #ffffff;
+      --bg-secondary: #f7f5f2;
+      --border: rgba(0,0,0,0.10);
+      --border-medium: rgba(0,0,0,0.15);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+      --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── UTILITIES ── */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+    .section-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 500; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--brand);
+      border: 1px solid var(--brand); border-radius: var(--radius-pill);
+      padding: 4px 14px; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: 32px; font-weight: 600; letter-spacing: -0.5px;
+      margin-bottom: 0.75rem; line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--text-secondary);
+      max-width: 560px; line-height: 1.7;
+    }
+    .divider { height: 1px; background: var(--border); }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar .container {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 600; letter-spacing: -0.3px;
+      color: var(--text-primary); text-decoration: none;
+    }
+    .nav-logo span { color: var(--brand); }
+    .nav-links {
+      display: flex; gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px; color: var(--text-secondary);
+      text-decoration: none; font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--brand); color: #fff;
+      border: none; padding: 9px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 14px; font-weight: 500;
+      cursor: pointer; transition: background 0.2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--brand-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .mobile-menu a {
+      padding: 14px 2rem; font-size: 15px;
+      color: var(--text-secondary); text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 52px; font-weight: 600;
+      letter-spacing: -1.5px; line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--brand); }
+    .hero p {
+      font-size: 18px; color: var(--text-secondary);
+      max-width: 540px; margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex; gap: 12px;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--brand); color: #fff;
+      border: none; padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-outline {
+      background: transparent; color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+      padding: 14px 28px; border-radius: var(--radius-sm);
+      font-size: 15px; cursor: pointer; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: var(--bg-secondary); }
+
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md); overflow: hidden;
+      max-width: 600px; margin: 3.5rem auto 0;
+    }
+    .stat-cell {
+      background: var(--bg);
+      padding: 1.5rem; text-align: center;
+    }
+    .stat-num {
+      font-size: 34px; font-weight: 600;
+      color: var(--brand); letter-spacing: -1px;
+    }
+    .stat-label {
+      font-size: 13px; color: var(--text-secondary); margin-top: 4px;
+    }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--bg-secondary);
+      padding: 3rem 0;
+    }
+    .about-strip .container {
+      display: flex; align-items: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .about-text { flex: 1; min-width: 280px; }
+    .about-text h2 { font-size: 26px; font-weight: 600; margin-bottom: 0.75rem; }
+    .about-text p { color: var(--text-secondary); line-height: 1.7; font-size: 15px; }
+    .about-badges {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.25rem;
+    }
+    .badge {
+      font-size: 12px; font-weight: 500;
+      background: var(--brand-light); color: var(--brand);
+      padding: 5px 14px; border-radius: var(--radius-pill);
+    }
+
+    /* ── SERVICES ── */
+    .services { padding: 4.5rem 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .service-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); }
+    .service-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-light);
+      display: flex; align-items: center;
+      justify-content: center; font-size: 22px;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .service-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── MENU ── */
+    .menu-section {
+      background: var(--bg-secondary);
+      padding: 4.5rem 0;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .menu-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .menu-thumb {
+      height: 110px; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 52px;
+    }
+    .menu-thumb.indian    { background: #FDF2E9; }
+    .menu-thumb.chinese   { background: #EAF2FB; }
+    .menu-thumb.conti     { background: #EAF7F0; }
+    .menu-thumb.desserts  { background: #FDF0F8; }
+    .menu-body { padding: 1rem 1.25rem 1.25rem; }
+    .menu-body h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+    .menu-body p { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+
+    /* ── PROCESS ── */
+    .process { padding: 4.5rem 0; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .step {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+    }
+    .step-num {
+      font-size: 13px; font-weight: 600; color: var(--brand);
+      margin-bottom: 0.75rem;
+    }
+    .step h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .step p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── PRICING ── */
+    .pricing { padding: 4.5rem 0; background: var(--bg-secondary); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .price-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+    }
+    .price-card.featured {
+      border: 2px solid var(--brand);
+    }
+    .popular-badge {
+      display: inline-block; font-size: 11px; font-weight: 500;
+      background: var(--brand-light); color: var(--brand);
+      padding: 3px 12px; border-radius: var(--radius-pill);
+      margin-bottom: 1rem;
+    }
+    .price-name { font-size: 17px; font-weight: 600; margin-bottom: 0.5rem; }
+    .price-amount {
+      font-size: 32px; font-weight: 600;
+      color: var(--brand); letter-spacing: -1px;
+    }
+    .price-per { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .price-features { list-style: none; }
+    .price-features li {
+      font-size: 13px; color: var(--text-secondary);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .price-features li:last-child { border-bottom: none; }
+    .check { color: var(--brand); font-size: 15px; font-weight: 600; }
+    .price-cta {
+      display: block; width: 100%; margin-top: 1.5rem;
+      background: var(--brand); color: #fff;
+      border: none; padding: 12px;
+      border-radius: var(--radius-sm);
+      font-size: 14px; font-weight: 500;
+      cursor: pointer; text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .price-cta:hover { background: var(--brand-dark); }
+    .price-cta.outline {
+      background: transparent; color: var(--brand);
+      border: 1px solid var(--brand);
+    }
+    .price-cta.outline:hover { background: var(--brand-light); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 4.5rem 0; }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .testi-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+    .testi-stars { font-size: 14px; color: #F59E0B; margin-bottom: 0.75rem; }
+    .testi-text {
+      font-size: 14px; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 600; flex-shrink: 0;
+    }
+    .testi-name { font-size: 13px; font-weight: 600; }
+    .testi-event { font-size: 12px; color: var(--text-muted); }
+
+    /* ── FAQ ── */
+    .faq { padding: 4.5rem 0; background: var(--bg-secondary); }
+    .faq-list { margin-top: 2.5rem; max-width: 700px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 0;
+    }
+    .faq-q {
+      font-size: 15px; font-weight: 500;
+      cursor: pointer; display: flex;
+      justify-content: space-between; align-items: center;
+      gap: 1rem;
+    }
+    .faq-arrow { font-size: 18px; color: var(--brand); transition: transform 0.3s; }
+    .faq-a {
+      font-size: 14px; color: var(--text-secondary);
+      line-height: 1.7; margin-top: 0.6rem;
+      display: none;
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+    /* ── CONTACT ── */
+    .contact { padding: 4.5rem 0; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 2.5rem; margin-top: 2.5rem;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-item {
+      display: flex; align-items: flex-start;
+      gap: 14px; padding: 1.1rem 1.25rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+    .contact-icon {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: var(--brand-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .contact-item-label { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-item-value { font-size: 14px; font-weight: 500; }
+    .contact-whatsapp {
+      display: flex; align-items: center; gap: 10px;
+      background: #25D366; color: #fff;
+      padding: 14px 20px; border-radius: var(--radius-md);
+      text-decoration: none; font-size: 15px; font-weight: 500;
+      justify-content: center; margin-top: auto;
+      transition: background 0.2s;
+    }
+    .contact-whatsapp:hover { background: #1ebe5d; }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%; padding: 11px 14px;
+      font-size: 14px; font-family: 'Inter', sans-serif;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      background: var(--bg); color: var(--text-primary);
+      outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { border-color: var(--brand); }
+    .contact-form textarea { height: 100px; resize: vertical; }
+    .contact-form .btn-primary {
+      width: 100%; padding: 13px;
+      font-size: 15px; justify-content: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a; color: #aaa;
+      padding: 2.5rem 0;
+    }
+    .footer-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: gap;
+      gap: 1rem;
+    }
+    .footer-logo { font-size: 18px; font-weight: 600; color: #fff; }
+    .footer-logo span { color: var(--brand); }
+    footer p { font-size: 13px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: #888; text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #25D366; color: #fff;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      transition: transform 0.2s, background 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5d; }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-strip .container { flex-direction: column; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .section-title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/917709918081" target="_blank" class="whatsapp-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.829 1.8 6.85L2 30l7.363-1.775A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.826-1.594l-.418-.248-4.369 1.054 1.084-4.261-.272-.437A11.46 11.46 0 0 1 4.5 16C4.5 9.648 9.648 4.5 16 4.5S27.5 9.648 27.5 16 22.352 27.5 16 27.5zm6.29-8.617c-.345-.172-2.04-1.006-2.355-1.12-.316-.115-.546-.172-.776.172-.23.345-.89 1.12-1.09 1.35-.2.23-.4.258-.745.086-.345-.172-1.457-.537-2.776-1.712-1.026-.914-1.718-2.043-1.919-2.388-.2-.345-.021-.531.15-.703.155-.155.345-.402.517-.603.172-.2.23-.345.345-.575.115-.23.057-.431-.029-.603-.086-.172-.776-1.87-1.063-2.56-.28-.672-.564-.581-.776-.592l-.661-.011c-.23 0-.603.086-.919.431-.316.345-1.207 1.178-1.207 2.873s1.236 3.334 1.408 3.564c.172.23 2.432 3.714 5.892 5.208.823.355 1.466.567 1.967.726.827.263 1.58.226 2.174.137.663-.1 2.04-.834 2.327-1.64.287-.804.287-1.493.2-1.637-.086-.143-.316-.23-.661-.402z"/>
+  </svg>
+</a>
+
+<!-- ── NAVBAR ── -->
+<header class="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">Jaipur <span>Caterers</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Quote</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#menu" onclick="toggleMenu()">Menu</a>
+    <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+    <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="section-tag">Serving Pune since 2010</div>
+    <h1>Food that makes your<br><em>event unforgettable</em></h1>
+    <p>100% pure vegetarian multi-cuisine catering for weddings, corporate events, and celebrations — crafted with care, served with pride across Pune.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">📅 Book Your Event</a>
+      <a href="#menu" class="btn-outline">Explore Our Menu</a>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-cell">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Events catered</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years in Pune</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">4.9★</div>
+        <div class="stat-label">Average rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── ABOUT STRIP ── -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-text">
+      <h2>Pune's trusted catering partner</h2>
+      <p>Started in 2010 from a small kitchen in Kothrud, Jaipur Caterers has grown into one of Pune's most trusted names for multi-cuisine catering. We believe every plate we serve carries our reputation — so we never compromise on quality, freshness, or presentation.</p>
+      <div class="about-badges">
+        <span class="badge">🟢 100% Pure Vegetarian</span>
+        <span class="badge">✓ FSSAI Licensed</span>
+        <span class="badge">✓ Hygienic kitchen</span>
+        <span class="badge">✓ Same-day response</span>
+        <span class="badge">✓ Customised menus</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-tag">What we offer</div>
+    <h2 class="section-title">Catering for every occasion</h2>
+    <p class="section-sub">From intimate gatherings to grand celebrations — we manage food, staff, and setup so you enjoy every moment.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💍</div>
+        <h3>Weddings & Receptions</h3>
+        <p>Lavish spreads for your big day — traditional thalis, live counters, dessert stations, and full uniformed staff.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Corporate Events</h3>
+        <p>Professional catering for meetings, seminars, and office parties — punctual, clean, and highly reliable.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎂</div>
+        <h3>Birthdays & Parties</h3>
+        <p>Custom menus with live stalls, kids-friendly options, and festive presentation for any celebration.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛕</div>
+        <h3>Pooja & Religious Events</h3>
+        <p>Pure vegetarian satvik food, prepared with care and served on time for all auspicious occasions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Conferences & Seminars</h3>
+        <p>Hi-tea, buffet, or box lunch — we adapt to your schedule and guest count seamlessly.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Home Gatherings</h3>
+        <p>Small, cozy events catered with the same quality as large functions. Minimum 30 guests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── MENU ── -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="section-tag">What's on the table</div>
+    <h2 class="section-title">Multi-cuisine menu</h2>
+    <p class="section-sub">We cook what your guests love — from rich North Indian curries to light continental bites, all made fresh on-site.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-thumb indian">🍛</div>
+        <div class="menu-body">
+          <h3>Indian cuisine</h3>
+          <p>Dal makhani, paneer dishes, biryanis, tandoor rotis, regional curries, and a live chaat counter.</p>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-thumb chinese">🥡</div>
+        <div class="menu-body">
+          <h3>Indo-Chinese</h3>
+          <p>Hakka noodles, manchurian, fried rice, chilli paneer — crowd favourites at every event.</p>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-thumb conti">🥗</div>
+        <div class="menu-body">
+          <h3>Continental</h3>
+          <p>Pastas, soups, bruschetta, grilled options, and salad bars for a fresh, light spread.</p>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-thumb desserts">🍮</div>
+        <div class="menu-body">
+          <h3>Sweets & desserts</h3>
+          <p>Gulab jamun, rasmalai, ice cream counter, pastries, and customised wedding sweets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process">
+  <div class="container">
+    <div class="section-tag">How it works</div>
+    <h2 class="section-title">From enquiry to event — simple</h2>
+    <p class="section-sub">We keep the process easy so you can focus on your event, not the logistics.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">Step 01</div>
+        <h3>Share your details</h3>
+        <p>Tell us your event date, guest count, and type of occasion via call, WhatsApp, or our form.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 02</div>
+        <h3>Get a custom quote</h3>
+        <p>We'll send you a detailed menu and pricing proposal within 2 hours — no surprises.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 03</div>
+        <h3>Tasting session</h3>
+        <p>We invite you for a free tasting at our kitchen so you can approve the menu before confirming.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 04</div>
+        <h3>We handle the rest</h3>
+        <p>On the day, our team arrives early, sets up, cooks fresh, and serves your guests with full care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PRICING ── -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-tag">Transparent pricing</div>
+    <h2 class="section-title">Simple, honest packages</h2>
+    <p class="section-sub">No hidden charges. All packages include serving staff, crockery, and buffet setup. Minimum 50 guests.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Silver</div>
+        <div class="price-amount">₹450</div>
+        <div class="price-per">per plate onwards · Pure vegetarian</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> 8-item menu</li>
+          <li><span class="check">✓</span> Pure vegetarian</li>
+          <li><span class="check">✓</span> Serving staff included</li>
+          <li><span class="check">✓</span> Basic buffet setup</li>
+          <li><span class="check">✓</span> Steel crockery</li>
+        </ul>
+        <a href="#contact" class="price-cta outline">Get a Quote</a>
+      </div>
+      <div class="price-card featured">
+        <div class="popular-badge">⭐ Most popular</div>
+        <div class="price-name">Gold</div>
+        <div class="price-amount">₹750</div>
+        <div class="price-per">per plate onwards · Pure vegetarian</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> 15-item menu</li>
+          <li><span class="check">✓</span> Pure vegetarian</li>
+          <li><span class="check">✓</span> 1 live food counter</li>
+          <li><span class="check">✓</span> Decorated buffet setup</li>
+          <li><span class="check">✓</span> Premium crockery & cutlery</li>
+        </ul>
+        <a href="#contact" class="price-cta">Book This Package</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Platinum</div>
+        <div class="price-amount">₹1,200</div>
+        <div class="price-per">per plate onwards · Pure veg multi-cuisine</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> 25+ item menu</li>
+          <li><span class="check">✓</span> Pure veg multi-cuisine spread</li>
+          <li><span class="check">✓</span> 3 live food counters</li>
+          <li><span class="check">✓</span> Premium crockery & décor</li>
+          <li><span class="check">✓</span> Dedicated event manager</li>
+        </ul>
+        <a href="#contact" class="price-cta outline">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-tag">What clients say</div>
+    <h2 class="section-title">Trusted by Pune families & businesses</h2>
+    <p class="section-sub">Real reviews from people who trusted us with their most important events.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"They catered our daughter's wedding for 350 guests. Everything was on time, the food was incredible, and the staff was professional throughout. Will always recommend Jaipur Caterers."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#FDF2E9; color:#B85C2A;">RS</div>
+          <div>
+            <div class="testi-name">Ramesh Sharma</div>
+            <div class="testi-event">Wedding · Kothrud, Pune</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"We use Jaipur Caterers for all our office events now. The food quality is always consistent, our team loves the variety, and they're extremely easy to coordinate with."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#EAF2FB; color:#185FA5;">PM</div>
+          <div>
+            <div class="testi-name">Priya Mehta</div>
+            <div class="testi-event">Corporate event · Hinjewadi</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Hired them for my son's birthday party. The live chaat counter was a huge hit! Guests wouldn't stop talking about the food. Booking them again for our anniversary."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#EAF7F0; color:#0F6E56;">AJ</div>
+          <div>
+            <div class="testi-name">Anjali Joshi</div>
+            <div class="testi-event">Birthday party · Baner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-tag">Common questions</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What is the minimum guest count? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Our minimum is 30 guests for home gatherings and 50 guests for all other event types. For very large events (500+), please contact us at least 3 weeks in advance.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you provide serving staff and equipment? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes — all our packages include trained serving staff, buffet counters, chafing dishes, and crockery. For Gold and Platinum packages, we also include table linen and decoration for the buffet area.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How far in advance should I book? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">We recommend booking at least 2–3 weeks in advance for smaller events and 4–6 weeks for weddings. However, we do accommodate last-minute requests based on availability.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you offer free tasting sessions? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes! For confirmed bookings above ₹50,000, we invite you to our kitchen for a complimentary tasting session so you can approve the menu before your event.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Are you 100% vegetarian? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes — Jaipur Caterers is a 100% pure vegetarian catering service. We do not serve or prepare any non-vegetarian food. All our menus, kitchens, and utensils are strictly vegetarian.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can you accommodate Jain or special dietary needs? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Absolutely. We offer Jain, satvik, diabetic-friendly, and allergen-aware menu options. Simply mention your requirements when enquiring and we'll build the menu accordingly.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What areas in Pune do you serve? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">We serve all areas across Pune and PCMC — including Kothrud, Baner, Hinjewadi, Wakad, Viman Nagar, Hadapsar, Kondhwa, Pimpri-Chinchwad, and more. For outstation events, contact us to discuss logistics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-tag">Get in touch</div>
+    <h2 class="section-title">Tell us about your event</h2>
+    <p class="section-sub">We'll get back to you within 2 hours with a custom quote and menu suggestion.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Call us</div>
+            <div class="contact-item-value">+91 77099 18081</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">hello@jaipurcaterers.in</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Based in</div>
+            <div class="contact-item-value">Kothrud, Pune — serving all of Pune & PCMC</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕘</div>
+          <div>
+            <div class="contact-item-label">Available</div>
+            <div class="contact-item-value">Monday to Sunday, 9 AM – 9 PM</div>
+          </div>
+        </div>
+        <a href="https://wa.me/917709918081" target="_blank" class="contact-whatsapp">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;fill:#fff;flex-shrink:0;">
+            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.829 1.8 6.85L2 30l7.363-1.775A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.826-1.594l-.418-.248-4.369 1.054 1.084-4.261-.272-.437A11.46 11.46 0 0 1 4.5 16C4.5 9.648 9.648 4.5 16 4.5S27.5 9.648 27.5 16 22.352 27.5 16 27.5zm6.29-8.617c-.345-.172-2.04-1.006-2.355-1.12-.316-.115-.546-.172-.776.172-.23.345-.89 1.12-1.09 1.35-.2.23-.4.258-.745.086-.345-.172-1.457-.537-2.776-1.712-1.026-.914-1.718-2.043-1.919-2.388-.2-.345-.021-.531.15-.703.155-.155.345-.402.517-.603.172-.2.23-.345.345-.575.115-.23.057-.431-.029-.603-.086-.172-.776-1.87-1.063-2.56-.28-.672-.564-.581-.776-.592l-.661-.011c-.23 0-.603.086-.919.431-.316.345-1.207 1.178-1.207 2.873s1.236 3.334 1.408 3.564c.172.23 2.432 3.714 5.892 5.208.823.355 1.466.567 1.967.726.827.263 1.58.226 2.174.137.663-.1 2.04-.834 2.327-1.64.287-.804.287-1.493.2-1.637-.086-.143-.316-.23-.661-.402z"/>
+          </svg>
+          &nbsp; Chat on WhatsApp
+        </a>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" placeholder="Your name" required />
+            <input type="tel" placeholder="Phone number" required />
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email address" />
+            <input type="date" title="Event date" required />
+          </div>
+          <select required>
+            <option value="" disabled selected>Type of event</option>
+            <option>Wedding / Reception</option>
+            <option>Corporate event</option>
+            <option>Birthday party</option>
+            <option>Pooja / Religious event</option>
+            <option>Conference / Seminar</option>
+            <option>Home gathering</option>
+            <option>Other</option>
+          </select>
+          <div class="form-row">
+            <input type="number" placeholder="Approx. guest count" min="30" required />
+            <select>
+              <option value="" disabled selected>Preferred package</option>
+              <option>Silver (₹450/plate)</option>
+              <option>Gold (₹750/plate)</option>
+              <option>Platinum (₹1200/plate)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <textarea placeholder="Any special requirements, dietary needs, or menu preferences?"></textarea>
+          <button type="submit" class="btn-primary">
+            📨 &nbsp; Send Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Jaipur <span>Caterers</span></div>
+      <p>© 2026 Jaipur Caterers, Pune. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#menu">Menu</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  function toggleFaq(item) {
+    const allItems = document.querySelectorAll('.faq-item');
+    allItems.forEach(i => { if (i !== item) i.classList.remove('open'); });
+    item.classList.toggle('open');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✅ Enquiry sent! We\'ll call you within 2 hours.';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
+  }
+
+  // Close mobile menu on outside click
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
